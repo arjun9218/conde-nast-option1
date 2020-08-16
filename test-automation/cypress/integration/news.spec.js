@@ -20,15 +20,18 @@ describe('News test spec', function () {
     });
 
     it('Should ask for API Token again if invalid token is submitted', () => {
-        cy.get('input').type('{selectall}{backspace}randomstring');
+        cy.get('input').type('{selectall}{backspace}randomstring{enter}');
+        cy.get('p').contains('Please enter a valid API Token').should('be.visible');
+        cy.get('input').type('{selectall}{backspace}randomstringoflengththirtytwo000{enter}');
         cy.contains('Submit').click();
         cy.wait('@setApiToken').then(xhr => {
             expect(xhr.status).to.equal(200);
-            expect(xhr.request.headers.Authorization).to.equal('randomstring');
+            expect(xhr.request.headers.Authorization).to.equal('randomstringoflengththirtytwo000');
         });
         cy.wait('@getLatestNews1').then(xhr => {
             expect(xhr.status).to.equal(401);
         });
+        cy.wait(2000);
         cy.get('label').contains('API Token').should('be.visible');
         cy.get('label').contains('Submit').should('be.visible');
     });

@@ -42,6 +42,9 @@ export default function App() {
         textColorDark: '#e8e8e8',
         textColor: newsState.darkMode ? '#505050' : '#e8e8e8'
       },
+      error: {
+        main: newsState.darkMode ? '#850900' : '#cf0e00'
+      },
       type: newsState.darkMode ? 'dark' : 'light'
     }
   });

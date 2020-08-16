@@ -2,11 +2,13 @@ import React, { useState, useContext } from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import ErrorIcon from '@material-ui/icons/Error';
 import { NewsContext } from '../store/NewsStore';
 import { setApiToken, getLatestNews, setSearchFilter } from '../store/actions';
 import {
     TextField,
-    Button
+    Button,
+    InputAdornment
 } from '@material-ui/core';
 import logoDark from '../assets/conde-nast-logo-black.svg';
 import logoLight from '../assets/conde-nast-logo-white.svg';
@@ -18,9 +20,13 @@ export default function Layout() {
     const { newsState, newsDispatch } = useContext(NewsContext);
     const [token, setToken] = useState('');
     const [fetchingNews, setFetchingNews] = useState(false);
+    const [isValid, setIsValid] = useState(true);
 
     const handleFormChange = (event) => {
         setToken(event.target.value);
+        if (event.target.value.length === 32) {
+            setIsValid(true);
+        }
     };
 
     // Calling the action setApiToken which in-turn calls the setApiToken post call to node server
@@ -31,7 +37,11 @@ export default function Layout() {
     const keyPressed = (event) => {
         const code = event.keyCode || event.which;
         if(code === 13) { //13 is the enter keycode
-            handleSubmit();
+            if (token.length === 32) {
+                handleSubmit();
+            } else {
+                setIsValid(false);
+            }
         } 
     }
 
@@ -97,18 +107,26 @@ export default function Layout() {
                     />
                 </Typography> */}
                 {!newsState.apiToken ?
-                    <form className={classes.apiTokenForm} noValidate autoComplete='off'>
+                    <div className={classes.apiTokenForm} noValidate autoComplete='off'>
                         <TextField
-                            InputProps={{
-                                classes: { root: classes.textField }
-                            }}
                             id='apiToken'
                             label='API Token'
                             variant='outlined'
                             value={token}
+                            helperText={!isValid ? 'Please enter a valid API Token' : ''}
                             InputLabelProps={{ shrink: token !== '' ? true : false }}
                             onChange={event => handleFormChange(event)}
+                            required
+                            error={!isValid}
                             onKeyPress={keyPressed}
+                            InputProps={{
+                                classes: { root: classes.textField },
+                                endAdornment: (
+                                    <InputAdornment position='end'>
+                                        {!isValid ? <ErrorIcon color="error" /> : ""}
+                                    </InputAdornment>
+                                )
+                            }}
                         />
                         <Button
                             className={classes.textField}
@@ -116,11 +134,11 @@ export default function Layout() {
                             component='label'
                             color='inherit'
                             onClick={handleSubmit}
-                            disabled={token === ''}
+                            disabled={token.length !== 32}
                         >
                             Submit
                         </Button>
-                    </form>
+                    </div>
                     :
                     <LatestNews />
                 }
