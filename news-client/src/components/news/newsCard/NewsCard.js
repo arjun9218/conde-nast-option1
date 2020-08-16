@@ -15,7 +15,7 @@ export default function NewsCard({ article }) {
     };
 
     return (
-        <Card className={classes.root}>
+        <Card data-cy={'newsCard'} className={classes.root}>
             <CardActionArea onClick={e => handleClick(article.url)}>
                 <CardMedia
                     className={classes.media}

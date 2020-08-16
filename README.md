@@ -20,7 +20,7 @@ In the browser open http://localhost:2020/news
 ## How to run tests
 
 ### To run tests with cypress test runner
-Once the server is started, open another terminal or git bash and navigate to `test-automation` folder.
+Start the server by following above guidelines, open another terminal or git bash and navigate to `test-automation` folder.
 
 Run `npm install`
 Then run `npm test`

@@ -4,7 +4,8 @@
   "description": "This is a automation test using cypress",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/cypress open",
+    "test-ec": "./node_modules/.bin/cypress run"
   },
   "author": "arjun",
   "license": "ISC",

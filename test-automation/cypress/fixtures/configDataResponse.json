@@ -1,0 +1,22 @@
+{
+  "defaultLanguage": "en",
+  "defaultCountry": "in",
+  "countries": [
+      {
+          "id": "au",
+          "label": "Australia"
+      },
+      {
+          "id": "in",
+          "label": "India"
+      },
+      {
+          "id": "ru",
+          "label": "Russia"
+      },
+      {
+          "id": "us",
+          "label": "USA"
+      }
+  ]
+}

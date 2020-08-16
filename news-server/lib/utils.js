@@ -14,7 +14,7 @@ function getConfigData(req, res) {
     if (config) {
         const configData = {};
         if (config.defaultLanguage) {
-            configData.defaultLaunguage = config.defaultLanguage;
+            configData.defaultLanguage = config.defaultLanguage;
         }
         if (config.defaultCountry) {
             configData.defaultCountry = config.defaultCountry;

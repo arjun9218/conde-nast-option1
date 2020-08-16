@@ -1,0 +1,5 @@
+{
+    "baseUrl": "http://localhost:2020/news",
+    "viewportWidth": 1920,
+    "viewportHeight": 1080
+}
