@@ -20,9 +20,19 @@ export const useStyles = makeStyles(theme => ({
     description: {
         width: '100%',
         overflow: 'hidden',
-        height: '50px'
+        height: '74px'
     },
     cardContent: {
-        padding: '24px'
+        padding: '24px 24px 0px 24px'
+    },
+    fade: {
+        position: 'absolute',
+        bottom: 0,
+        left: 0,
+        width: '100%',
+        textAlign: 'center',
+        margin: 0,
+        padding: '24px 0',
+        backgroundImage: 'linear-gradient(to bottom, transparent, white)'
     }
 }));

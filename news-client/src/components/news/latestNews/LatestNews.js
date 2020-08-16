@@ -59,30 +59,30 @@ export default function LatestNews() {
         <div className={classes.root}>
             <CssBaseline />
             <Paper elevation={3} className={classes.searchFiltersPaper}>
-                <form className={classes.searchFilters} noValidate autoComplete="off">
+                <form className={classes.searchFilters} noValidate autoComplete='off'>
                     <TextField
-                        id="keyword"
+                        id='keyword'
                         className={classes.textField}
-                        label="Keyword"
+                        label='Keyword'
                         value={searchFilters.keyword}
                         onChange={event => handleFormChange('keyword', event)}
                         InputProps={{
                             startAdornment: (
-                                <InputAdornment position="start">
+                                <InputAdornment position='start'>
                                     <SearchIcon />
                                 </InputAdornment>
                             ),
                         }}
                     />
                     <FormControl className={classes.textField}>
-                        <InputLabel id="country-label">Country</InputLabel>
+                        <InputLabel id='country-label'>Country</InputLabel>
                         <Select
-                            labelId="country"
-                            id="country"
+                            labelId='country'
+                            id='country'
                             value={searchFilters.country}
                             onChange={event => handleFormChange('country', event)}
                         >
-                            <MenuItem value="">
+                            <MenuItem value=''>
                                 <em>--Select--</em>
                             </MenuItem>
                             {newsState && newsState.configData && newsState.configData.countries && newsState.configData.countries.length && newsState.configData.countries.map(country => {
@@ -96,9 +96,9 @@ export default function LatestNews() {
                     </FormControl>
                     <Button
                         className={classes.button}
-                        variant="outlined"
-                        component="label"
-                        color="inherit"
+                        variant='outlined'
+                        component='label'
+                        color='inherit'
                         onClick={handleSubmit}
                     >
                         Search

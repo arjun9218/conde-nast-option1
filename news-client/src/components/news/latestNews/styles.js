@@ -42,18 +42,18 @@ export const useStyles = makeStyles(theme => ({
         width: '144px'
     },
     darkMode: {
-        textAlign: "right"
+        textAlign: 'right'
     },
     newsGrid: {
         display: 'grid',
         [theme.breakpoints.up(1080)]: {
-            gridTemplateColumns: "repeat(1, 1fr)"
+            gridTemplateColumns: 'repeat(1, 1fr)'
         },
         [theme.breakpoints.up(1280)]: {
-            gridTemplateColumns: "repeat(2, 1fr)"
+            gridTemplateColumns: 'repeat(2, 1fr)'
         },
         [theme.breakpoints.up(1600)]: {
-            gridTemplateColumns: "repeat(3, 1fr)"
+            gridTemplateColumns: 'repeat(3, 1fr)'
         },
         gridGap: '24px',
         marginTop: '24px',

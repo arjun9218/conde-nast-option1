@@ -76,8 +76,8 @@ export default function Layout() {
         <div onScroll={e => loadMoreNews(e, newsState.searchFilter.page)} className={classes.root}>
             <CssBaseline />
             <AppBar
-                position="fixed"
-                color="secondary"
+                position='fixed'
+                color='secondary'
                 className={classes.appBar}
                 elevation={0}
             >
@@ -87,24 +87,24 @@ export default function Layout() {
             </AppBar>
             <main className={classes.content}>
                 <div className={classes.toolbar} />
-                {/* <Typography component="div" className={classes.darkMode}>
+                {/* <Typography component='div' className={classes.darkMode}>
                     <FormControlLabel
                         checked={newsState.darkMode}
                         onChange={setMode}
-                        control={<Switch color="primary" />}
-                        label="Dark mode"
-                        labelPlacement="start"
+                        control={<Switch color='primary' />}
+                        label='Dark mode'
+                        labelPlacement='start'
                     />
                 </Typography> */}
                 {!newsState.apiToken ?
-                    <form className={classes.apiTokenForm} noValidate autoComplete="off">
+                    <form className={classes.apiTokenForm} noValidate autoComplete='off'>
                         <TextField
                             InputProps={{
                                 classes: { root: classes.textField }
                             }}
-                            id="apiToken"
-                            label="API Token"
-                            variant="outlined"
+                            id='apiToken'
+                            label='API Token'
+                            variant='outlined'
                             value={token}
                             InputLabelProps={{ shrink: token !== '' ? true : false }}
                             onChange={event => handleFormChange(event)}
@@ -112,9 +112,9 @@ export default function Layout() {
                         />
                         <Button
                             className={classes.textField}
-                            variant="outlined"
-                            component="label"
-                            color="inherit"
+                            variant='outlined'
+                            component='label'
+                            color='inherit'
                             onClick={handleSubmit}
                             disabled={token === ''}
                         >

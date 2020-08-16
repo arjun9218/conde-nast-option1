@@ -45,6 +45,6 @@ export const useStyles = makeStyles(theme => ({
         marginBottom: '8px'
     },
     darkMode: {
-        textAlign: "right"
+        textAlign: 'right'
     }
 }));

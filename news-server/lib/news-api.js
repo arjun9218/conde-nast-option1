@@ -44,7 +44,7 @@ function getLatestNews(req, res) {
                     newsApi = null;
                     api_token = null;
                 }
-                res.status(401).send({ message: "Invalid token", error: err });
+                res.status(401).send({ message: 'Invalid token', error: err });
             });
     } else {
         res.status(401).send({ message: 'Token not initialized, please initialize the token and try again!!' });

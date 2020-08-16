@@ -26,9 +26,10 @@ export default function NewsCard({ article }) {
                     <Typography className={classes.title}>
                         {article.title}
                     </Typography>
-                    <Typography variant="body2" className={classes.description} color="textSecondary">
+                    <Typography variant='body2' className={classes.description} color='textSecondary'>
                         {article.description}
                     </Typography>
+                    <div className={classes.fade}></div>
                 </CardContent>
             </CardActionArea>
         </Card>

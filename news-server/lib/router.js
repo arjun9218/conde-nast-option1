@@ -6,7 +6,7 @@ const API_SET_TOKEN = '/news/setApiToken';
 const API_GET_TOKEN = '/news/getApiToken';
 const API_GET_CONFIG = '/news/getConfigData';
 
-const express = require("express");
+const express = require('express');
 const router = express.Router();
 const newsApiHandler = require('./news-api');
 const utilities = require('./utils');
