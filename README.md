@@ -3,6 +3,8 @@ This is a solution for the option 1 in the se-test.
 
 ## How to run the application
 
+Make sure you have the latest version of Node installed and all the required environment variables are configured to run `node` and `npm`.
+
 #### `git clone https://github.com/arjun9218/conde-nast-option1.git`
 
 Once you've cloned the project, navigate to project root directory.
@@ -16,6 +18,8 @@ Once the build is successful, navigate to news-server folder.
 Start the server by `node server.js`
 
 In the browser open http://localhost:2020/news
+
+You can use this API token when prompted: `9e9f8d40b60449fc8bbee79d2b5bb64e`
 
 ## How to run tests
 
