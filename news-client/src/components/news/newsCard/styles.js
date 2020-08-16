@@ -34,5 +34,12 @@ export const useStyles = makeStyles(theme => ({
         margin: 0,
         padding: '24px 0',
         backgroundImage: 'linear-gradient(to bottom, transparent, white)'
+    },
+    overlap: {
+        paddingLeft: '24px',
+        marginTop: '-18px',
+        color: 'rgba(255, 255, 255, 0.7)',
+        fontSize: '16px',
+        background: 'rgba(0,0,0,0.5)'
     }
 }));

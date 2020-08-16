@@ -5,6 +5,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import { useStyles } from './styles';
+import defaultImage from '../../../assets/no-image.png';
 
 export default function NewsCard({ article }) {
     const classes = useStyles();
@@ -19,9 +20,14 @@ export default function NewsCard({ article }) {
             <CardActionArea onClick={e => handleClick(article.url)}>
                 <CardMedia
                     className={classes.media}
-                    image={article.urlToImage}
+                    image={article.urlToImage && article.urlToImage.length ? article.urlToImage : defaultImage}
                     title={article.title}
                 />
+                {article.author && article.author.length ?
+                <div className={classes.overlap}>
+                    {article.author}
+                </div>
+                : null}
                 <CardContent className={classes.cardContent}>
                     <Typography className={classes.title}>
                         {article.title}
