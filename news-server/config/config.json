@@ -1,0 +1,30 @@
+{
+    "server": {
+        "port": 2020,
+        "contextPath": "/news",
+        "defaultResponseHeaders": {
+            "Access-Control-Allow-Origin": "*"
+        }
+    },
+    "pageSize": 10,
+    "defaultLanguage": "en",
+    "countries": [
+        {
+            "id": "au",
+            "label": "Australia"
+        },
+        {
+            "id": "in",
+            "label": "India"
+        },
+        {
+            "id": "ru",
+            "label": "Russia"
+        },
+        {
+            "id": "us",
+            "label": "USA"
+        }
+    ],
+    "defaultCountry": "in"
+}
